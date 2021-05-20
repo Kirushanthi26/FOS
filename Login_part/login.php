@@ -1,8 +1,39 @@
 <?php 
-
+session_start();
 //including the DB connection page and header page 
-include "../Database/database.php";
+ include "../Database/database.php";
  include "login_header.php";
+
+ $error_info = "";
+ 
+ if(isset($_POST["username"]) && isset($_POST["password"])){
+    $username =$_POST["username"];
+    $password = $_POST["password"];
+
+    if(!empty($username) && !empty($password)){
+
+        $query = "SELECT * FROM user WHERE username = '" . $username . "' "; //create the query
+        $result = $conn->query($query); //hit the database
+        $row = mysqli_fetch_assoc($result); //Fetch a result row as an associative array
+
+        if(md5($password) == $row["password"]){
+            $_SESSION["username"] = $username; //hold information to all the pages 
+
+            if($row["admin"] == 1){
+                header("Location: ../Admin/admin.php");
+            }else{
+                header("Location: ../Client/index.php");
+            }
+
+        }else{
+            $error_info = "Wrong Password, please Try Again";
+        }
+
+    }else{
+        $error_info = "Please, Enter The Username And Password!!";
+    }
+ }
+
 ?>
 <body>
     <div class="container-fluid">
