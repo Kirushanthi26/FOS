@@ -24,7 +24,7 @@
 .form-box h3{
     font: bold;
     color: orangered; 
-    padding: 20px;
+    padding: 10px;
  }
 
  input{
@@ -34,6 +34,8 @@
      border: none;
      padding: 6px 10px;
      font-family: 'Poppins', sans-serif;
+     position: relative;
+     right: 20px;
 }
 
 input[type=reset]{
@@ -63,10 +65,15 @@ a:hover {
 }
 
 .inputForm{
-padding: 10px;
+padding: 5px;
+text-align: left;
+
 }
 
 label{
     padding:0 30px;
     font-family: 'Poppins', sans-serif;
+    display: inline-block; 
+    width: 210px; 
+    text-align: right;
 }
