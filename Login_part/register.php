@@ -1,5 +1,47 @@
 <?php 
+session_start();
+//including the DB connection page and header page 
+ include "../Database/database.php";
  include "login_header.php";
+ 
+ //get the inputs 
+ if(isset($_POST["Register"])){
+
+    //store all the input in particular variable 
+    $name = $_POST["name"];
+    $address = $_POST["address"];
+    $email = $_POST["email"];
+    $phoneNo = $_POST["phoneNo"];
+    $username = $_POST["username"];
+    $password = $_POST["password"];
+    $confirm = $_POST["confirm"];
+
+    $error_info ="";
+
+
+    if($password == $confirm){
+        $result = $conn->query("SELECT * FROM user WHERE username ='".$username."'");
+
+        if(mysqli_num_rows($result)==0){
+
+            $sql = "INSERT INTO user (name, address, email, tel, username, password) VALUES ('$name','$address','$email',
+            '$phoneNo','$username','".md5($password)."')";
+
+            if($conn->query($sql)){
+                header ("Location: login.php");
+            }else{
+                $error_info = "Couldn't create your account";
+            }
+
+        }else{
+            $error_info = "username already taken";
+        }
+
+    }else{
+        $error_info = "the confirm password you entered doesn't match";
+    }
+
+ }
 ?>
 <body>
     <div class="container-fluid">

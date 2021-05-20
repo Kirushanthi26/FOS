@@ -1,4 +1,7 @@
 <?php 
+
+//including the DB connection page and header page 
+include "../Database/database.php";
  include "login_header.php";
 ?>
 <body>
