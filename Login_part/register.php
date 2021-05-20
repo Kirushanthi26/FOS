@@ -4,14 +4,17 @@
 <body>
     <div class="container-fluid">
         <div class="row">
+            <!-- image container -->
             <div class="col-md-6 d-none d-md-block img-fluid image-container">
             </div>
+            <!-- image container end -->
 
+            <!-- form part -->
             <div class="col-md-6 form-container">
                 <div class="col-md-12 form-group form-box text-center">
                     <h1 id="loghead">BeeChef</h1>
                     <h3>Registration</h3>
-                    <h6 id="right-p">Create Your Account... Enjoy Fastest Food Service..!</h6>
+                    <h6>Create Your Account... Enjoy Fastest Food Service..!</h6>
                     <form action="register.php" method="POST" enctype="multipart/form-data">
                     <div class="inputForm">
                         <label for="name">Name: </label>
@@ -41,6 +44,8 @@
                     <label for="confirm">Confirm Password: </label>
                     <input type="password" name="confirm" id="confirm" required>
                     </div>
+
+                    <!-- alert part start-->
                     <div class="inputForm">
                     <?php 
                         // showing the error message
@@ -50,6 +55,8 @@
                             <?= $error_info ?></div>
                         <?php } ?>
                     </div>
+                    <!-- alert part end-->
+
                     <button name="Register" class="btn btn-success">Register</button>
                     <button type="reset" class="btn btn-danger">Cancel</button>
                     </form>

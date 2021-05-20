@@ -4,9 +4,12 @@
 <body>
     <div class="container-fluid">
         <div class="row">
+            <!-- image container -->
             <div class="col-md-6 d-none d-md-block img-fluid image-container">
             </div>
+            <!-- image container end -->
 
+            <!-- form start -->
             <div class="col-md-6 form-container">
                 <div class="col-md-12 form-group form-box text-center">
                     <h1 id="loghead">BeeChef</h1>

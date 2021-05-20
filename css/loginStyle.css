@@ -38,6 +38,11 @@
      right: 20px;
 }
 
+
+.form-box h6{
+    font-family: 'Poppins', sans-serif;
+}
+
 input[type=reset]{
     background-color: #a84949;
     color: #343838;
