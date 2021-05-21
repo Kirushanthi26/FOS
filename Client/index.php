@@ -1,14 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+<?php 
+//connect the header and nav part by using client_header.php 
+include "client_header.php"; ?> 
+
     <?php
     echo "this is index.php";
     ?>
+    <a href="../Login_part/loginout.php"> Login Out</a>
 </body>
 </html>

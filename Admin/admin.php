@@ -10,5 +10,6 @@
     <?php
     echo "this is admin.php";
     ?>
+     <a href="../Login_part/loginout.php"> Login Out</a>
 </body>
 </html>
