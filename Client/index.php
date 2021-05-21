@@ -6,5 +6,6 @@ include "client_header.php"; ?>
     echo "this is index.php";
     ?>
     <a href="../Login_part/loginout.php"> Login Out</a>
-</body>
-</html>
+<?php
+include "client_footer.php"; 
+?>

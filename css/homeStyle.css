@@ -39,3 +39,16 @@
 .main_header_nav li:hover{
     color:#d4753a ;
 }
+
+/*footer design*/
+.footer_box{
+    margin-bottom: 0;
+}
+#main_header_footer{
+    font-style: italic; 
+    text-align: left;
+    color: #fd5f00;
+    font-size: 60px;
+    text-align: center;
+}
+
