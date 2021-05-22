@@ -52,3 +52,47 @@
     text-align: center;
 }
 
+/* index.php design */
+/* carousel design */
+.carousel-inner-images{
+    width: 100%;
+    height: 60vh;
+    object-fit: cover;
+   
+}
+
+.box-b1{
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    width: 30%;
+    float: left;
+    margin-left: 2.5%;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    text-align: center;
+    padding: 15px;
+    background-color:white;
+    border-radius: 5px;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+#h1-2{
+    font-style: italic; 
+    text-align: left;
+    color: #fd5f00;
+    font-size: 60px;
+    text-align: center; 
+}
+
+.box-b2{
+    border: 2px solid #F21D44;
+    width: 20%;
+    float: left;
+    margin-left: 4%;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    text-align: center;
+    padding: 15px;
+    background-color:white;
+    border-radius: 5px;
+}
