@@ -25,28 +25,28 @@ include "../css/carousel.php";
             <h2 class="text-center" style="color:#F25D27;">How It Works</h2>
             <p class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam reprehenderit id enim quasi dolor recusandae itaque dicta esse inventore, rerum culpa cupiditate, exercitationem, quod ad?</p>
             
-            <div class="box-b2">
-                <i class="fas fa-sign-in-alt" style="font-size:48px;color:#F2A516;"></i>
+            <div class="box_b2">
+                <i class="fas fa-sign-in-alt p-2" style="font-size:48px;color:#fd5f00;"></i>
                 <h6>Login/Register</h6>
                 <p>Need to create the account or already have account then login!</p>
             </div>
-            <div class="box-b2">
-                <i class="fas fa-utensils" style="font-size:48px;color:#F2A516;"></i>
+            <div class="box_b2">
+                <i class="fas fa-utensils p-2" style="font-size:48px;color:#fd5f00;"></i>
                 <h6>Order</h6>
                 <p>Select your favouried Food and add the food in the Addcard Part.  </p>
             </div>
-            <div class="box-b2">
-                <i class="fab fa-amazon-pay" style="font-size:48px;color:#F2A516;"></i>
+            <div class="box_b2">
+                <i class="fab fa-amazon-pay p-2" style="font-size:48px;color:#fd5f00;"></i>
                 <h6>Confirm Payament</h6>
                 <p>If you okey with your order then confirm the order</p>
             </div>
-            <div class="box-b2">
-                <i class="fas fa-motorcycle" style="font-size:48px;color:#F2A516;"></i>
+            <div class="box_b2">
+                <i class="fas fa-motorcycle p-2" style="font-size:48px;color:#fd5f00;"></i>
                 <h6>Fast Delivery</h6>
                 <p>After confirm, if we accept the order, we will send confime mail.</p>
             </div>
 
-            <h2 class="home-t1" style="color:#F25D27;">New Items</h2>
+            <h2 class="text-center" style="color:#F25D27;">New Items</h2>
         </div>
     </div>
 </div>

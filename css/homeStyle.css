@@ -64,6 +64,7 @@
 .box-b1{
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
     width: 30%;
+    height: 25vh;
     float: left;
     margin-left: 2.5%;
     margin-top: 20px;
@@ -84,9 +85,10 @@
     text-align: center; 
 }
 
-.box-b2{
-    border: 2px solid #F21D44;
+.box_b2{
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
     width: 20%;
+    height: 30vh;
     float: left;
     margin-left: 4%;
     margin-top: 20px;
@@ -95,4 +97,5 @@
     padding: 15px;
     background-color:white;
     border-radius: 5px;
+    font-family: 'Poppins', sans-serif;
 }
