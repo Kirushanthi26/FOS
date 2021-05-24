@@ -1,5 +1,6 @@
 <?php 
 //connect the header and nav part by using client_header.php 
+include "../Database/database.php";
 include "client_header.php"; 
 include "../css/carousel.php";
 ?> 
