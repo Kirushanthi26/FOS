@@ -8,6 +8,29 @@ include "client_header.php"; //header design part
 
 <?php
     $ID=$name=$email=$tel=$add=$pas=$user="";
+    $myAccount_info ="";
+
+    if(isset($_POST["submitUser"])){
+        $search1 = $conn->real_escape_string($_POST['Username']);
+        $result = $conn->query("SELECT * FROM user WHERE username='$search1'");
+
+        if($result->num_rows >0){
+			while($rows = $result->fetch_assoc()){
+			$ID=$rows['uid'];
+			$name=$rows['name'];
+			$email=$rows['email'];
+			$tel=$rows['tel'];
+			$add=$rows['address'];
+            $user=$rows['username'];
+            $pas=$rows['password'];
+				
+			}
+		}
+		else{
+            $myAccount_info = "No Results";
+        }
+
+    }
 ?>
 
 <div class="container-fluid" style="background-color:#fef1e1;">
@@ -20,7 +43,7 @@ include "client_header.php"; //header design part
                 <div class="form-group">
                     <label for="Username">Enter Username for searching purpose: </label>
                     <input type="text" name="Username" id="Username" class="form-control" placeholder="Enter Username for searching purpose" required>
-                    <button type="submit" name="submit1" class="btn btn-primary m-2">Find</button>
+                    <button type="submit" name="submitUser" class="btn btn-primary m-2">Find</button>
                 </div>
 
                 <h3 class="text-center p-3 " style="color:#F75940;"> Your Details.. </h3>
