@@ -31,6 +31,34 @@ include "client_header.php"; //header design part
         }
 
     }
+
+    if(isset($_POST["update"])){
+        $name = $_POST["name"];
+        $add = $_POST["address"];
+        $em = $_POST["email"];
+        $pn = $_POST["phoneNo"];
+        $un = $_POST["username"];
+        $pw = $_POST["password"];
+
+        $sql = "INSERT INTO user (name, address, email, tel, username, password) VALUES ( '$name', '$add','$em','$pn','$un','$pw')";
+  
+        if ($conn->query($sql)) {
+            $myAccount_info = "Your details updated successfully !";
+        }else{
+            $myAccount_info = "Your details is Not updated !";
+        }
+    }
+
+    if(isset($_POST['delete'])){
+        $unn = $_POST["Username"];
+        $sql1 = "DELETE * FROM user WHERE username= '$unn' ";
+        if ($conn->query($sql1) === TRUE) {
+            $myAccount_info = "Record deleted successfully";
+        }else{
+            $myAccount_info = "Record is not deleted";
+        }
+    }
+
 ?>
 
 <div class="container-fluid" style="background-color:#fef1e1;">
@@ -39,11 +67,13 @@ include "client_header.php"; //header design part
         </div>
         <div class="col-md-6" >   
             <h1 class="text-center p-3 " style="color:#F75940;">My Account Details Update</h1>
-                <form action="MyAccount.php" method="post">
+                <form action="MyAccount.php" method="post" id="myForm">
                 <div class="form-group">
                     <label for="Username">Enter Username for searching purpose: </label>
                     <input type="text" name="Username" id="Username" class="form-control" placeholder="Enter Username for searching purpose" required>
                     <button type="submit" name="submitUser" class="btn btn-primary m-2">Find</button>
+
+                    <!-- error part -->
                 </div>
 
                 <h3 class="text-center p-3 " style="color:#F75940;"> Your Details.. </h3>
@@ -74,7 +104,7 @@ include "client_header.php"; //header design part
                 <div class="button_design">
                 <button name="update" class="btn btn-success m-3">Update</button>
                 <button name="delete" class="btn btn-danger m-3" >Delete</button>
-                <button type="reset" class="btn btn-warning m-3" >Cancel</button>
+                <button type="button" onclick="myFunction()" class="btn btn-warning m-3" >Cancel</button>
                 </div>
                 </form>
         </div>
