@@ -1,15 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <?php
-    echo "this is admin.php";
-    ?>
-     <a href="../Login_part/loginout.php"> Login Out</a>
-</body>
-</html>
+<?php 
+//connect the header and nav part by using admin_header.php 
+include "../Database/database.php";
+include "admin_header.php"; 
+?>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>hello admin </h1>
+        </div>
+    </div>
+</div>
+
+<?php
+//include the footer part
+include "admin_footer.php"; 
+?>
