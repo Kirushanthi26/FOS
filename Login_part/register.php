@@ -25,7 +25,7 @@ session_start();
         if(mysqli_num_rows($result)==0){
 
             $sql = "INSERT INTO user (name, address, email, tel, username, password) VALUES ('$name','$address','$email',
-            '$phoneNo','$username','".md5($password)."')";
+            '$phoneNo','$username','$password')";
 
             if($conn->query($sql)){
                 header ("Location: login.php");

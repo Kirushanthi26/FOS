@@ -16,7 +16,7 @@ session_start();
         $result = $conn->query($query); //hit the database
         $row = mysqli_fetch_assoc($result); //Fetch a result row as an associative array
 
-        if(md5($password) == $row["password"]){
+        if($password == $row["password"]){
             $_SESSION["username"] = $username; //hold information to all the pages 
 
             if($row["admin"] == 1){
