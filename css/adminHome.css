@@ -9,14 +9,15 @@
 #nav {
   min-height: 72vh;
   max-height: 200vh;
-  background-color: #313131;
+  /* background-color: #313131; */
+  background-color: rgba(0, 0, 0, 0.815);
   width: 100%;
 }
 
 nav ul {
   list-style: none;
-  padding: 20px;
-  text-align: center;
+  padding:10px;
+  text-align: left;
   margin-bottom: 0;
 }
 
@@ -27,11 +28,14 @@ nav ul li {
 #nav ul li a {
   text-decoration: none;
   color: white;
-  font-size: larger;
-  font-weight: bolder;
+  font-size: 15px;
   font-family: 'Poppins', sans-serif;
 }
 #nav ul li a:hover {
   color: #97a6b6;
 }
 
+.admin_iconBar{
+  padding-right: 10px;
+  color: #fd5f00;
+}
