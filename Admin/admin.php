@@ -14,7 +14,7 @@ include "admin_header.php";
                 <ul>
                     <li><a href="admin.php"><span class="admin_iconBar"><i class="fas fa-home"></i></span>Dashboard</a></li>
                     <li><a href="http://"><span class="admin_iconBar"><i class="fas fa-concierge-bell"></i></span>Orders</a></li>
-                    <li><a href="http://"><span class="admin_iconBar"><i class="fas fa-sitemap"></i></span>Category</a></li>
+                    <li><a href="category.php"><span class="admin_iconBar"><i class="fas fa-sitemap"></i></span>Category</a></li>
                     <li><a href="http://"><span class="admin_iconBar"><i class="fas fa-folder-plus"></i></span>Product</a></li>
                     <li><a href="http://"><span class="admin_iconBar"><i class="fas fa-marker"></i></span>Feedback</a></li>
                     <li><a href="http://"><span class="admin_iconBar"><i class="fas fa-users-cog"></i></span>Admin Management</a></li>
@@ -22,7 +22,7 @@ include "admin_header.php";
             </nav>
         </div>
         <div class="col-md-10">
-          
+             
         </div>
     </div>
 </div>

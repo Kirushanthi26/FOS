@@ -7,9 +7,7 @@
 }
 
 #nav {
-  min-height: 72vh;
-  max-height: 200vh;
-  /* background-color: #313131; */
+  min-height: 100%;
   background-color: rgba(0, 0, 0, 0.815);
   width: 100%;
 }
@@ -38,4 +36,10 @@ nav ul li {
 .admin_iconBar{
   padding-right: 10px;
   color: #fd5f00;
+}
+
+.page-header-cate{
+  font-family: 'Poppins', sans-serif;
+  padding: 10px;
+  font-weight: bold;
 }
