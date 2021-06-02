@@ -3,10 +3,23 @@
 include "../Database/database.php";
 include "admin_header.php"; 
 ?>
-<div class="container-fluid">
+<style>
+<?php include "../css/adminHome.css"; //admin home css part add ?>
+</style>
+
+<div class="container-fluid ">
     <div class="row">
-        <div class="col-md-12">
-            <h1>hello admin </h1>
+        <div class="col-md-2 px-0 ">
+            <nav id="nav" class="active">
+                <ul>
+                    <li><a href="http://">home</a></li>
+                    <li><a href="http://">home</a></li>
+                    <li><a href="http://">home</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="col-md-10">
+          
         </div>
     </div>
 </div>
