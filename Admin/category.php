@@ -87,8 +87,11 @@ include "admin_header.php";
 					    while($row=$query->fetch_array()){
                     ?>
                     <tr>
-                        <td><?php echo $row['c_name']; ?></td>
-                        <td></td>
+                        <td><b><?php echo $row['c_name']; ?></b></td>
+                        <td>
+                            <button class="btn btn-success mr-3"><i class="fas fa-edit pr-2"></i>Edit</button>
+                            <button class="btn btn-danger" ><i class="fas fa-trash-alt pr-2"></i>Delete</button>
+                        </td>
                     </tr>
                     <?PHP } ?>
                 </tbody>
