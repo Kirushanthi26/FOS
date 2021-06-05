@@ -95,7 +95,7 @@ include "admin_header.php";
                         </td>
                         <td>
                             <button name="edit" value="<?php echo $row['cid']; ?>" data-toggle="modal" data-target="#editCateModal<?php echo $row['cid']; ?>"class="btn btn-success mr-3"><i class="fas fa-edit pr-2"></i>Edit</button>
-                            <button name="delete" value="<?php echo $row['cid']; ?>" data-toggle="modal" data-target="#deleteCateModal"class="btn btn-danger" ><i class="fas fa-trash-alt pr-2"></i>Delete</button>
+                            <button name="delete" value="<?php echo $row['cid']; ?>" data-toggle="modal" data-target="#deleteCateModal<?php echo $row['cid']; ?>" class="btn btn-danger" ><i class="fas fa-trash-alt pr-2"></i>Delete</button>
                             <?php include "categoryModal.php" ?>
                         </td>
                     </tr>
