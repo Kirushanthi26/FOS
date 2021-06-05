@@ -7,6 +7,7 @@ include "admin_header.php";
 <style>
 <?php include "../css/adminHome.css"; //admin home css part add ?>
 </style>
+
 <?php
 // Add Category
     if(isset($_POST["submit"])){
@@ -17,6 +18,8 @@ include "admin_header.php";
     
         header('location:category.php');
     }
+
+
 ?>
 
 <div class="container-fluid ">
@@ -37,11 +40,11 @@ include "admin_header.php";
             <h1 class="page-header text-center page-header-cate">CATEGORY CRUD</h1>
             <!-- Button trigger modal -->
             <div class="text-right">
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-plus"></i> Category</button>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addCategoryModal"><i class="fas fa-plus"></i> Category</button>
             </div>
             
             <!-- Modal Add category-->
-            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="font-family: 'Poppins', sans-serif;">
+            <div class="modal fade" id="addCategoryModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="font-family: 'Poppins', sans-serif;">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -87,15 +90,18 @@ include "admin_header.php";
 					    while($row=$query->fetch_array()){
                     ?>
                     <tr>
-                        <td><b><?php echo $row['c_name']; ?></b></td>
+                        <td><b><?php echo $row['c_name']; ?></b>
+                        <?php $idCE=$row['cid']; ?>
+                        </td>
                         <td>
-                            <button class="btn btn-success mr-3"><i class="fas fa-edit pr-2"></i>Edit</button>
-                            <button class="btn btn-danger" ><i class="fas fa-trash-alt pr-2"></i>Delete</button>
+                            <button name="edit" value="<?php echo $row['cid']; ?>" data-toggle="modal" data-target="#editCateModal<?php echo $row['cid']; ?>"class="btn btn-success mr-3"><i class="fas fa-edit pr-2"></i>Edit</button>
+                            <button name="delete" value="<?php echo $row['cid']; ?>" data-toggle="modal" data-target="#deleteCateModal"class="btn btn-danger" ><i class="fas fa-trash-alt pr-2"></i>Delete</button>
+                            <?php include "categoryModal.php" ?>
                         </td>
                     </tr>
                     <?PHP } ?>
                 </tbody>
-            </table>
+            </table>                       
         </div>
     </div>
 </div>
