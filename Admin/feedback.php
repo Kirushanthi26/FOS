@@ -22,7 +22,7 @@ include "admin_header.php";
             </nav>
         </div>
         <div class="col-md-10">
-             
+            <h1 class="page-header text-center page-header-cate">FEEDBACK</h1>
         </div>
     </div>
 </div>

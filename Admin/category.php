@@ -28,11 +28,11 @@ include "admin_header.php";
             <nav id="nav" class="active">/
                 <ul>
                     <li><a href="admin.php"><span class="admin_iconBar"><i class="fas fa-home"></i></span>Dashboard</a></li>
-                    <li><a href="http://"><span class="admin_iconBar"><i class="fas fa-concierge-bell"></i></span>Orders</a></li>
+                    <li><a href="order.php"><span class="admin_iconBar"><i class="fas fa-concierge-bell"></i></span>Orders</a></li>
                     <li><a href="category.php"><span class="admin_iconBar"><i class="fas fa-sitemap"></i></span>Category</a></li>
-                    <li><a href="http://"><span class="admin_iconBar"><i class="fas fa-folder-plus"></i></span>Product</a></li>
-                    <li><a href="http://"><span class="admin_iconBar"><i class="fas fa-marker"></i></span>Feedback</a></li>
-                    <li><a href="http://"><span class="admin_iconBar"><i class="fas fa-users-cog"></i></span>Admin Management</a></li>
+                    <li><a href="product.php"><span class="admin_iconBar"><i class="fas fa-folder-plus"></i></span>Product</a></li>
+                    <li><a href="feedback.php"><span class="admin_iconBar"><i class="fas fa-marker"></i></span>Feedback</a></li>
+                    <li><a href="adminManage.php"><span class="admin_iconBar"><i class="fas fa-users-cog"></i></span>Admin Management</a></li>
                 </ul>
             </nav>
         </div>
