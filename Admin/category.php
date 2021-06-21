@@ -24,7 +24,7 @@ include "admin_header.php";
 
 <div class="container-fluid ">
     <div class="row">
-        <div class="col-md-2 px-0 ">
+        <div class="col-md-2 px-0">
             <nav id="nav" class="active">/
                 <ul>
                     <li><a href="admin.php"><span class="admin_iconBar"><i class="fas fa-home"></i></span>Dashboard</a></li>
@@ -40,7 +40,7 @@ include "admin_header.php";
             <h1 class="page-header text-center page-header-cate">CATEGORY CRUD</h1>
             <!-- Button trigger modal -->
             <div class="text-right">
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addCategoryModal"><i class="fas fa-plus"></i> Category</button>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addCategoryModal"><i class="fas fa-plus"></i> Add Category</button>
             </div>
             
             <!-- Modal Add category-->
