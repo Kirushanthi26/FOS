@@ -1,4 +1,5 @@
 <?php 
+session_start();
 //connect the header and nav part by using admin_header.php 
 include "../Database/database.php";
 include "admin_header.php"; 
@@ -43,10 +44,51 @@ include "admin_header.php";
                                 <div class="form-group" style="margin-top:10px;">
                                     <div class="row">
                                         <div class="col-md-4" style="margin-top:7px;">
-                                            <label class="control-label font-weight-bold">Item Name:</label>
+                                            <label class="control-label font-weight-bold">Product Name:</label>
                                         </div>
                                         <div class="col-md-8">
-                                        <input type="text" class="form-control" name="cateName" required>
+                                        <input type="text" class="form-control" name="proName" required>
+                                        </div>
+                                    </div>
+                                    <div class="row py-2">
+                                        <div class="col-md-4" style="margin-top:7px;">
+                                            <label class="control-label font-weight-bold">Category Name:</label>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <select class="form-control"name="catName" >
+                                            <option selected>Choose...</option>
+                                            <?php
+                                                $sql="SELECT c_name FROM category";
+                                                $query=$conn->query($sql);
+					                            while($row=$query->fetch_array()){
+                                            ?>
+                                            <option><?php echo $row['c_name']; ?></option>
+                                            <?PHP } ?>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="row py-2">
+                                        <div class="col-md-4" style="margin-top:7px;">
+                                            <label class="control-label font-weight-bold">Price:</label>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <input type="text" class="form-control" name="cateName" required>
+                                        </div>
+                                    </div>
+                                    <div class="row py-2">
+                                        <div class="col-md-4" style="margin-top:7px;">
+                                            <label class="control-label font-weight-bold">Photo:</label>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <input type="file" class="form-control-file" name="" required>
+                                        </div>
+                                    </div>
+                                    <div class="row py-2">
+                                        <div class="col-md-4" style="margin-top:7px;">
+                                            <label class="control-label font-weight-bold">Description:</label>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <textarea class="form-control" rows="2" name="" required></textarea>
                                         </div>
                                     </div>
                             </div>
