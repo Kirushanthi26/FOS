@@ -1,4 +1,5 @@
 <?php 
+session_start();
 //connect the header and nav part by using admin_header.php 
 include "../Database/database.php";
 include "admin_header.php"; 
@@ -23,6 +24,32 @@ include "admin_header.php";
         </div>
         <div class="col-md-10">
             <h1 class="page-header text-center page-header-cate">FEEDBACK</h1>
+            <table class="table table-hover text-center table-bordered" >
+                <thead>
+                    <tr>
+                        <th scope="col">Customer Name</th>
+                        <th scope="col">Feedback</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+                        $sql="SELECT * FROM feedback";
+                        $query=$conn->query($sql);
+					    while($row=$query->fetch_array()){
+                    ?>
+                    <tr>
+                        <td><b><?php echo $row['uname']; ?></b>
+                        </td>
+                        <td><b><?php echo $row['f_description']; ?></b>
+                        </td>
+                        <td>
+                            <a id="FBdelete" href="feedbackDelete.php?proId=<?php echo $row['fid']; ?>"><i class="fas fa-trash-alt pr-2"></i>Delete</a>
+                        </td>
+                    </tr>
+                    <?PHP } ?>
+                </tbody>
+            </table>  
         </div>
     </div>
 </div>
