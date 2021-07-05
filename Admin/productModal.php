@@ -2,12 +2,32 @@
     include "../Database/database.php";
     
     if(isset($_POST["editSubmit"])){
-        $cateEditId= $_POST["cateEditId"];
-        $cateEditName=$_POST["cateEditName"];
+        $id = $_POST['proEditId'];
+        $pname=$_POST['proEditName'];
+        $category=$_POST['proEditCate'];
+        $price=$_POST['proEditPrice'];
+        $desc=$_POST['proEditDesc'];
 
-	    $sql="update category set c_name='$cateEditName' where cid='$cateEditId'";
-	    $conn->query($sql);
-        header('location:category.php');
+    
+        $sql="select * from product where pid='$id'";
+        $query=$conn->query($sql);
+        $row=$query->fetch_array();
+    
+        $fileinfo=PATHINFO($_FILES["photo"]["name"]);
+    
+        if (empty($fileinfo['filename'])){
+            $location = $row['photo'];
+        }
+        else{
+            $newFilename=$fileinfo['filename'] ."_". time() . "." . $fileinfo['extension'];
+            move_uploaded_file($_FILES["photo"]["tmp_name"],"../images/foodPic/" . $newFilename);
+            $location="../images/foodPic/" . $newFilename;
+        }
+    
+        $sql="update product set p_name='$pname', cid='$category', price='$price', photo='$location', description='$desc' where pid='$id'";
+        $conn->query($sql);
+    
+        header('location:product.php');
     }
     
     if(isset($_POST["deleteSubmit"])){
@@ -33,7 +53,7 @@
                     </button>
             </div>
             <div class="modal-body">
-                <form method="POST" action="categoryModal.php" enctype="multipart/form-data">
+                <form method="POST" action="productModal.php" enctype="multipart/form-data">
                     <div class="form-group" style="margin-top:10px;">
                         <div class="row">
                             <div class="col-md-4" style="margin-top:7px;">
@@ -65,13 +85,25 @@
                                 <label class="control-label font-weight-bold">Category Name:</label>
                             </div>
                             <div class="col-md-8">
-                            <input type="text" class="form-control" name="proEditCate" value="<?php echo $row['cid']; ?>" required>
+                            <select class="form-control-sm-8" name="proEditCate">
+                                <option value="<?php echo $row['cid']; ?>"><?php echo $row['c_name']; ?></option>
+                                    <?php
+                                        $sql="select * from category where cid != '".$row['cid']."'";
+                                        $cquery=$conn->query($sql);
+
+                                        while($crow=$cquery->fetch_array()){
+                                            ?>
+                                            <option value="<?php echo $crow['cid']; ?>"><?php echo $crow['c_name']; ?></option>
+                                            <?php
+                                        }
+                                    ?>
+                            </select>
                             </div>
                             <div class="col-md-4" style="margin-top:7px;">
                                 <label class="control-label font-weight-bold">Photo:</label>
                             </div>
                             <div class="col-md-8">
-                            <input type="text" class="form-control" name="proEditName" value="<?php echo $row['p_name']; ?>" required>
+                            <input type="file" class="form-control-file" name="photo" required>
                             </div>
                         </div>
                     </div>
