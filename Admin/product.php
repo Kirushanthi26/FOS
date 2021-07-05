@@ -31,10 +31,17 @@ include "admin_header.php";
 
             <!-- Button trigger modal - add product -->
             <div class="text-right">
-                <select class="form-control-sm text-left mr-5">
-                    <option>Select Category</option>
-                    <option>2</option>
-                    <option>3</option>
+                <select id="catList" class="form-control-sm text-left mr-5">
+                    <option value="0">Select Category</option>
+                    <?php
+                    $catesql="select * from category";
+                    $catquery=$conn->query($catesql);
+                    while($catrow=$catquery->fetch_array()){
+                    $catid = isset($_GET['category']) ? $_GET['category'] : 0;
+					$selected = ($catid == $catrow['cid']) ? " selected" : "";
+                    echo " <option$selected value=".$catrow['cid'].">".$catrow['c_name']."</option> ";
+                    }
+                    ?>
                 </select>
                 <button type="button" class="btn btn-primary my-3" data-toggle="modal" data-target="#addProductModal"><i class="fas fa-plus"></i>Add Product</button>
             </div>
@@ -128,9 +135,15 @@ include "admin_header.php";
             </thead>
             <tbody>
                     <?php
-                        $sql="SELECT * FROM product ORDER BY pid ASC";
+                        $where = "";
+                        if(isset($_GET['category']))
+                        {
+                            $catid=$_GET['category'];
+                            $where = " WHERE product.cid = $catid";
+                        }
+                        $sql="select * from product left join category on category.cid=product.cid $where order by product.cid asc, p_name asc";
                         $query=$conn->query($sql);
-					    while($row=$query->fetch_array()){
+                        while($row=$query->fetch_array()){
                     ?>
                     <tr>
                         <td>
@@ -163,3 +176,17 @@ include "admin_header.php";
 //include the footer part
 include "admin_footer.php"; 
 ?>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#catList").on('change', function(){
+			if($(this).val() == 0)
+			{
+				window.location = 'product.php';
+			}
+			else
+			{
+				window.location = 'product.php?category='+$(this).val();
+			}
+		});
+	});
+</script>
