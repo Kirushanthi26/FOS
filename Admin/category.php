@@ -40,7 +40,7 @@ include "admin_header.php";
             <h1 class="page-header text-center page-header-cate">CATEGORY CRUD</h1>
             <!-- Button trigger modal -->
             <div class="text-right">
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addCategoryModal"><i class="fas fa-plus"></i> Add Category</button>
+            <button type="button" class="btn btn-primary my-3" data-toggle="modal" data-target="#addCategoryModal"><i class="fas fa-plus"></i> Add Category</button>
             </div>
             
             <!-- Modal Add category-->
