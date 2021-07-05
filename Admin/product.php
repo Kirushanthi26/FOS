@@ -8,8 +8,31 @@ include "admin_header.php";
 <?php include "../css/adminHome.css"; //admin home css part add ?>
 </style>
 <?php
+// Add product
+if(isset($_POST["submit"])){
+    $proName=$_POST["proName"];
+    $catNameid =$_POST["catName"];
+    $price=$_POST["price"];
+    $desc=$_POST["desc"];
 
-    
+    $fileinfo=PATHINFO($_FILES["photo"]["name"]);
+
+	if(empty($fileinfo['filename'])){
+		$location="";
+	}
+	else{
+	$newFilename=$fileinfo['filename'] ."_". time() . "." . $fileinfo['extension'];
+	move_uploaded_file($_FILES["photo"]["tmp_name"],"../images/foodPic/" . $newFilename);
+	$location="../images/foodPic/" . $newFilename;
+	}
+	
+	$sql="insert into product (p_name, cid, price, photo, description) values ('$proName', '$catNameid', '$price', '$location','$desc')";
+	$conn->query($sql);
+
+	header('location:product.php');
+
+
+}
 
 ?>
 <div class="container-fluid" >
@@ -76,11 +99,11 @@ include "admin_header.php";
                                             <select class="form-control-sm"name="catName" >
                                             <option selected>Choose...</option>
                                             <?php
-                                                $sql="SELECT c_name FROM category";
+                                                $sql="SELECT cid,c_name FROM category";
                                                 $query=$conn->query($sql);
 					                            while($row=$query->fetch_array()){
                                             ?>
-                                            <option><?php echo $row['c_name']; ?></option>
+                                            <option value="<?php echo $row['cid']; ?>"><?php echo $row['c_name']; ?></option>
                                             <?PHP } ?>
                                             </select>
                                         </div>
@@ -147,14 +170,14 @@ include "admin_header.php";
                     ?>
                     <tr>
                         <td>
-                            <a href="<?php if(empty($row['photo'])){echo "upload/noimage.jpg";} else{echo $row['photo'];} ?>">
-                            <img src="<?php if(empty($row['photo'])){echo "upload/noimage.jpg";} else{echo $row['photo'];} ?>" height="30px" width="40px">
+                            <a href="<?php if(empty($row['photo'])){echo "../images/foodPic/noimage.jpg";} else{echo $row['photo'];} ?>">
+                            <img src="<?php if(empty($row['photo'])){echo "../images/foodPic/noimage.jpg";} else{echo $row['photo'];} ?>" height="30px" width="40px">
                             </a>
                         </td>
                         <td><b><?php echo $row['p_name']; ?></b>
                         <?php $idCE=$row['pid']; ?>
                         </td>
-                        <td>Rs. <?php echo $row['price']; ?></td>
+                        <td>Rs. <?php echo number_format($row['price'], 2); ?></td>
                         <td><?php echo $row['description']; ?></td>
                         <td>
                             <button name="edit" value="<?php echo $row['cid']; ?>" data-toggle="modal" data-target="#editCateModal<?php echo $row['cid']; ?>"class="btn btn-success"><i class="fas fa-edit"></i></button>
