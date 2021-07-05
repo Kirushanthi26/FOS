@@ -23,7 +23,7 @@ include "../Database/database.php";
 ?>
 
 
-<!-- Modal Add category-->
+<!-- Modal edit category-->
 <div class="modal fade" id="editCateModal<?php echo $row['cid']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="font-family: 'Poppins', sans-serif;">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -61,7 +61,7 @@ include "../Database/database.php";
         </div>
     </div>
 </div>
-<!-- Modal end - Add category -->
+<!-- Modal end - edit category -->
 
 <!-- Modal Delete category-->
 <div class="modal fade" id="deleteCateModal<?php echo $row['cid']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="font-family: 'Poppins', sans-serif;">

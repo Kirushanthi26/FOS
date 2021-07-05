@@ -180,9 +180,9 @@ if(isset($_POST["submit"])){
                         <td>Rs. <?php echo number_format($row['price'], 2); ?></td>
                         <td><?php echo $row['description']; ?></td>
                         <td>
-                            <button name="edit" value="<?php echo $row['cid']; ?>" data-toggle="modal" data-target="#editCateModal<?php echo $row['cid']; ?>"class="btn btn-success"><i class="fas fa-edit"></i></button>
-                            <button name="delete" value="<?php echo $row['cid']; ?>" data-toggle="modal" data-target="#deleteCateModal<?php echo $row['cid']; ?>" class="btn btn-danger" ><i class="fas fa-trash-alt"></i></button>
-                            <?php include "categoryModal.php" ?>
+                            <button name="edit" value="<?php echo $row['pid']; ?>" data-toggle="modal" data-target="#editProModal<?php echo $row['pid']; ?>"class="btn btn-success"><i class="fas fa-edit"></i></button>
+                            <button name="delete" value="<?php echo $row['pid']; ?>" data-toggle="modal" data-target="#deleteProModal<?php echo $row['pid']; ?>" class="btn btn-danger" ><i class="fas fa-trash-alt"></i></button>
+                            <?php include "productModal.php" ?>
                         </td>
                     </tr>
                     <?PHP } ?>
