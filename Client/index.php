@@ -46,9 +46,32 @@ include "../css/carousel.php";
                 <h6>Fast Delivery</h6>
                 <p>After confirm, if we accept the order, we will send confime mail.</p>
             </div>
-
-            <h2 class="text-center" style="color:#F25D27;">New Items</h2>
         </div>
+    </div>
+    <div class="row">
+       <div class="col-md-1" style="background-color:#fef1e1;"></div> 
+        <div class="col-md-10" style="background-color:#fef1e1;">
+            <h2 class="text-center" style="color:#F25D27;">New Items</h2>
+            <?php
+                $sql = "select * from product ORDER BY pid DESC LIMIT 5";
+                $res = $conn->query($sql);
+                if($res->num_rows>0){
+                    while($row=$res->fetch_assoc()){
+                        echo '<div style="display: inline-block;object-position: center;" >
+                        <div class="card mx-2 my-2"" style="width: 16rem; height:28rem">
+                        <img class="card-img-top" src="'.$row['photo'].'" alt="" height="200px">
+                            <div class="card-body">
+                                <h5 class="card-title">'. $row['p_name'] .'</h5>
+                                <p class="card-text">'. $row['description'] .'</p>
+                                <h6 class="text-danger"> Rs.'. $row['price'] .'</h6>
+                                <a href="#" class="btn btn-primary">Add to Cart</a>
+                            </div>
+                        </div></div>';
+                    }
+                }
+            ?>
+        </div>
+        <div class="col-md-1" style="background-color:#fef1e1;"></div>
     </div>
 </div>
 
