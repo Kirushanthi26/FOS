@@ -42,7 +42,7 @@
 ?>
     
 
-<!-- Modal Add category-->
+<!-- Modal edit category-->
 <div class="modal fade" id="editProModal<?php echo $row['pid']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="font-family: 'Poppins', sans-serif;">
     <div class="modal-dialog" role="document">
         <div class="modal-content">

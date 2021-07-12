@@ -40,13 +40,12 @@ include "client_header.php";
                 if($res->num_rows>0){
                     while($row=$res->fetch_assoc()){
                         echo '<div style="display: inline-block;object-position: center;" >
-                        <div class="card mx-2 my-2"" style="width: 16rem; height:28rem">
+                        <div class="card mx-2 my-2"" style="width: 16rem; height:23rem">
                         <img class="card-img-top" src="'.$row['photo'].'" alt="" height="200px">
                             <div class="card-body">
                                 <h5 class="card-title">'. $row['p_name'] .'</h5>
-                                <p class="card-text">'. $row['description'] .'</p>
                                 <h6 class="text-danger"> Rs.'. $row['price'] .'</h6>
-                                <a href="#" class="btn btn-primary">Add to Cart</a>
+                                <a href="view.php?id='. $row['pid'] .'" name="addCart" class="btn btn-primary">Add to Cart</a>
                             </div>
                         </div></div>';
                     }

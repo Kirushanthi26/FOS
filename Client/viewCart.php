@@ -1,6 +1,7 @@
-<?php 
+<?php
+session_start();
+include "../Database/database.php"; 
 include "client_header.php"; 
-echo "view cart page";
 ?>
 
 
