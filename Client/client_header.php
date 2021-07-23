@@ -36,7 +36,6 @@
         <li class="fas fa-user-circle"><a href="MyAccount.php" >My Account</a></li>
         <li class="fas fa-cart-plus"><a href="viewCart.php">Add Cart</a></li>
         <li class="fas fa-sign-out-alt"><a href="../Login_part/loginout.php">Login Out</a></li>
-
         </div>
     </div>
 </div>
