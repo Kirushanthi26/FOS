@@ -33,7 +33,6 @@ session_start();
             }else{
                 header("Location: ../Client/index.php");
             }
-
         }else{
             $error_info = "Wrong Password, please Try Again";
         }
