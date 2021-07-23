@@ -17,7 +17,16 @@ session_start();
         $row = mysqli_fetch_assoc($result); //Fetch a result row as an associative array
 
         if($password == $row["password"]){
-            $_SESSION["username"] = $username; //hold information to all the pages 
+            $Uid = $row["uid"];
+            $uAddress = $row["address"];
+            $uTel = $row["tel"];
+            $uName = $row["name"];
+
+            $_SESSION["username"] = $username; //hold information to all the pages
+            $_SESSION["uid"]=$Uid;
+            $_SESSION["address"]=$uAddress;
+            $_SESSION["tel"]=$uTel;
+            $_SESSION["name"] = $uName;
 
             if($row["admin"] == 1){
                 header("Location: ../Admin/admin.php");

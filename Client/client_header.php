@@ -26,7 +26,7 @@
 
         <div class="col-md-8" style="background-color:#fef1e1;">
         <h1 id="main_header_text">
-        <img src="../images/logo.png" alt="logo" title="beechef logo" width="200px">
+        <img src="../images/BeeChef.png" alt="logo" title="beechef logo" width="200px">
             Beechef
         </h1>
         </div>

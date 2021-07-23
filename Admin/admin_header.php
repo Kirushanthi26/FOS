@@ -18,6 +18,8 @@
     <!-- fontawesome icon cdn -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
 
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
     <!-- css style sheet -->
     <link rel="stylesheet" href="../css/adminStyle.css" type="text/css">
 </head>
@@ -26,16 +28,16 @@
     <div class="row">
         <!-- #fef1e1 -->
         <div class="col-md-8" style="background-color:black;">
-        <h1 id="main_header_text">
-        <img src="../images/logo.png" alt="logo" title="beechef logo" width="130px">
+        <h1 id="main_header_text" style="color:#fbc749;">
+        <img src="../images/BeeChef.png" alt="logo" title="beechef logo" width="130px">
             Beechef <span> Admin Page</span>
         </h1>
         </div>
 
         <div class="col-md-4 main_header_nav" style="background-color:black;">
 
-        <li class="fas fa-user-circle"><a href="MyAccount.php" >My Account</a></li>
-        <li class="fas fa-sign-out-alt"><a href="../Login_part/loginout.php">Login Out</a></li>
+        <li class="fas fa-user-circle" style="color: #3563cb;"><a href="MyAccountAdmin.php" >My Account</a></li>
+        <li class="fas fa-sign-out-alt" style="color: #3563cb;"><a href="../Login_part/loginout.php">Login Out</a></li>
 
         </div>
     </div>

@@ -2,7 +2,7 @@
     <div class="row">
 
         <div class="col-md-4" style="background-color:#414141;">
-        <img src="../images/logo.png" alt="logo" title="beechef logo" width="200px" class="rounded mx-auto d-block">
+        <img src="../images/BeeChef.png" alt="logo" title="beechef logo" width="200px" class="rounded mx-auto d-block">
         <h1 id="main_header_footer">Beechef</h1>
         </div>
 

@@ -80,7 +80,7 @@ include "client_header.php";
             <tr>
             <td>Enter Qty</td>
                 <td>
-                <input type='number' min='0' max='20' name='qty' required>
+                <input type='number' min='1' max='20' name='qty' required>
                 <input type='hidden' value='{$row['p_name']}' name='pname'>
                 <input type='hidden' value='{$row['price']}' name='prices'>
                 </td>

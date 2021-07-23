@@ -32,7 +32,7 @@ if(isset($_POST['submit'])){
 
         <div class="col-md-6" >
             <h1 class="mt-5 text-center">Feedback Form</h1>
-            <form action="about.php"  method="post">
+            <form action="about.php"  method="POST" enctype="multipart/form-data">
                 <div class="form-group">
                 <label for="uname">Username:</label>
                 <input type="text" class="form-control" id="uname" placeholder="Enter username" name="uname" required>
