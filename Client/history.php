@@ -35,7 +35,6 @@ include "client_header.php"; //header design part
     </div>
 </div>
 
-
 <?php
 //include the footer part
 include "client_footer.php"; 
