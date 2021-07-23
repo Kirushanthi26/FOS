@@ -29,7 +29,7 @@ session_start();
             $_SESSION["name"] = $uName;
 
             if($row["admin"] == 1){
-                header("Location: ../Admin/dashboard.php");
+                header("Location: ../Admin/admin.php");
             }else{
                 header("Location: ../Client/index.php");
             }
