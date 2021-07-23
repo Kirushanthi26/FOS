@@ -51,7 +51,7 @@ include "client_header.php";
 
 
 
-            if(isset($_GET["id"])){
+            if(isset($_GET["id"])){  //1st 
             $sql = "select * from product where pid={$_GET["id"]}";
             $res =$conn->query($sql);           
         if($res->num_rows>0){

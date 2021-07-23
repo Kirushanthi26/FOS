@@ -7,8 +7,8 @@ include "client_header.php";
     <div class="row">
         <div class="col-md-1" ></div>
         <div class="col-md-10" >
-            <h1>Thank you for chosing us!</h1>
-            <p>few mintites later, you will get your confiremation order mail... </p>
+            <h1>Thank you for choosing us!</h1>
+            <p>A few minutes later, you will get your confirmation order by your call... </p>
             <p>enjoy your food!</p>
         </div>
         <div class="col-md-1" ></div>
