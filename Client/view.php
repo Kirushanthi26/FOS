@@ -89,7 +89,6 @@ include "client_header.php";
             <td><input type='submit' name='addcart' value='Add Cart' class='btn btn-success' ></td>
             </tr>
 
-
             </table>
             </form>
             ";
